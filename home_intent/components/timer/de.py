@@ -29,13 +29,13 @@ class Timer(BaseTimer):
             "Stell (den | einen) (Wecker | Timer) auf (<time>){seconds} [($timer_partial_time)] Sekunden",
             "Stell (den | einen) (Wecker | Timer) auf (<time>){hours} Stunden und (<time>){minutes} Minuten",
             "Stell (den | einen) (Wecker | Timer) auf (<time>){minutes} Minuten und (<time>){seconds} Sekunden",
-            "Stell einen (<time>){hours} Stunden und (<time>){minutes} Minuten Timer",
-            "Stell einen (<time>){minutes} Minuten und (<time>){seconds} Sekunden Timer",
+            "Stell einen (<time>){hours} Stunden und (<time>){minutes} Minuten (Wecker | Timer)",
+            "Stell einen (<time>){minutes} Minuten und (<time>){seconds} Sekunden (Wecker | Timer)",
             "Stell einen (<time>){hours} [($timer_partial_time)] Stunden (Wecker | Timer)",
             "Stell einen (<time>){minutes} [($timer_partial_time)] Minuten (Wecker | Timer)",
             "Stell einen (<time>){seconds} [($timer_partial_time)] Sekunden (Wecker | Timer)",
         ]
     )
     def set_timer(self, satellite_id, hours: int = None, minutes: int = None, seconds: int = None, timer_partial_time=None):
-        human_timer_duration = self._set_timer(satellite_id, "Der {0} Timer ist abgelaufen", hours, minutes, seconds, timer_partial_time)
-        return f"Stelle Timer auf {human_timer_duration}"
+        human_timer_duration = self._set_timer(satellite_id, "Der {0} Wecker ist abgelaufen", hours, minutes, seconds, timer_partial_time)
+        return f"Stelle Wecker auf {human_timer_duration}"
